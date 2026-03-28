@@ -101,15 +101,29 @@ This helped compare how different classifiers behave on sentiment analysis tasks
 ```bash
 sentiment-analyzer/
 │
-├── app/
-│   ├── train.py
-│   ├── evaluate.py
-│   ├── predict.py
-│   ├── streamlit_app.py
-│   └── ...
+├── .streamlit/
+│ └── config.toml
 │
-├── screenshots/
-│   └── ...
+├── app/
+│ ├── data_loader.py # load and prepare datasets
+│ ├── preprocess.py # text preprocessing (cleaning, stopwords, etc.)
+│ ├── train.py # model training logic
+│ ├── evaluate.py # model evaluation
+│ ├── predict.py # prediction functions
+│ ├── inference.py # inference pipeline
+│ ├── groq_helper.py # Groq API integration
+│ ├── load_imdb.py # IMDB dataset loader
+│ ├── main.py # main script (optional CLI execution)
+│ └── streamlit_app.py # Streamlit dashboard UI
+│
+├── data/ # datasets used for training/testing
+├── models/ # saved trained models
+├── screenshots/ # application screenshots
+│ ├── 01-home.png
+│ ├── 02-negative-result.png
+│ ├── 03-neutral-result.png
+│ ├── 04-positive-result.png
+│ └── 05-prediction-models.png
 │
 ├── requirements.txt
 └── README.md
